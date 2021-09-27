@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Recipes, RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  recipes: Recipes[];
+
+  constructor(private recipeService: RecipeService) {
+    this.recipeService;
+  }
+
+  ngOnInit() {
+    this.recipes = this.recipeService.getAll();
+  }
 
 }
