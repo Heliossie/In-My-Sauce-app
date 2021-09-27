@@ -25,11 +25,14 @@
   </ion-card>
   <ion-list *ngFor="let r of recipes">
     <ion-item>
-      <ion-item>
-        <ion-label>
-          <h3>{{ r.title }}</h3>
-        </ion-label>
-      </ion-item>
+      <ion-thumbnail slot=start>
+        <ion-avatar *ngIf="r.picture">
+          <img [src]="r.picture" />
+        </ion-avatar>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ r.title }}</h2>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
