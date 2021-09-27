@@ -18,6 +18,11 @@ export class AppComponent {
       title: 'Accueil',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'Recettes',
+      url: '/recipe',
+      icon: 'book-outline'
     }
   ]
   constructor() { }

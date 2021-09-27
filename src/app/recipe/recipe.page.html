@@ -1,26 +1,14 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      In My Sauce!
-    </ion-title>
+    <ion-title>Recettes</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <img src="">
-    <ion-card-header>
-      <ion-card-title>In My Sauce!</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <p>In My Sauce! est une application de gestion de vos recettes de cuisine, c'est comme votre livre, mais au format
-        mobile</p>
-    </ion-card-content>
-  </ion-card>
+<ion-content>
+  <h1>Liste de recettes</h1>
   <ion-list *ngFor="let r of recipes">
     <ion-item>
       <ion-thumbnail slot=start>
