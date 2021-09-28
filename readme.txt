@@ -17,7 +17,7 @@ Pour partager les recettes j'ai utiliser le plugin 'Share' de capacitor, j'ai en
 
 Actuellement le partage envoye sur la doc de ionic, dans une V2 j'aimerais développer un fichier pdf ou une url pour le partage.
 
-J'ai également utiliser le plugin Haptics pour émettre une vibration lors que le minuteur est a zéro
+J'ai également utiliser le plugin Haptics pour émettre une vibration lorsque le minuteur tombe à zéro
 
 -----------Difficulté rencontrer-----------
 J'ai rencontrer quelques difficultée pour la mise en page et l'utilisation de certains composant de Ionic en effet, le composant ion-input par exemple sous le navigateur chrome n'ouvre pas de clavier(virtuel), lorsque j'ai transfèrer mon application sur mon téléphone, pour la simuler je me suis aperçu que les inputs ouvrais par default le clavier du smartphone, cela étant gênant pour la navigation j'ai fait le choix de retirer les inputs. Il faudrait que je développe un fonctionnalité pour modifier les recettes.
