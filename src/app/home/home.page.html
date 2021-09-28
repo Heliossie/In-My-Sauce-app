@@ -21,18 +21,25 @@
         mobile</p>
     </ion-card-content>
   </ion-card>
-  <h1>Vos recettes les plus utilisés</h1>
-  <!-- Boucle for pour lister les recettes -->
-  <ion-list *ngFor="let r of recipes">
-    <ion-item>
-      <ion-thumbnail slot=start>
-        <ion-avatar *ngIf="r.picture">
-          <img [src]="r.picture" />
-        </ion-avatar>
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ r.title }}</h2>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-card>
+    <ion-label>
+      <h1>Vos recettes les plus utilisés</h1>
+    </ion-label>
+    <!-- Boucle for pour lister les recettes -->
+    <ion-list *ngFor="let r of recipes">
+      <ion-item>
+        <ion-thumbnail slot=start>
+          <ion-avatar *ngIf="r.picture">
+            <img [src]="r.picture" />
+          </ion-avatar>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ r.title }}</h2>
+        </ion-label>
+        <ion-button slot=end (click)="showRecipe(r)">
+          <ion-icon slot="icon-only" name="search-sharp"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
