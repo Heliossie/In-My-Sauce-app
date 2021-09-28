@@ -8,7 +8,7 @@ import { Recipes, RecipeService } from '../recipe.service';
 })
 export class HomePage {
 
-  recipes: Recipes[];
+  recipes: Recipes[] = [];
 
   constructor(private recipeService: RecipeService) {
     this.recipeService;

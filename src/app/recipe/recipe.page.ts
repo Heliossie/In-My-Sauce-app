@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipes, RecipeService } from '../recipe.service';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-recipe',
@@ -8,9 +10,9 @@ import { Recipes, RecipeService } from '../recipe.service';
 })
 export class RecipePage implements OnInit {
 
-  recipes: Recipes[];
+  recipes: Recipes[] = [];
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService, private router: Router) {
     this.recipeService;
   }
 
@@ -18,5 +20,16 @@ export class RecipePage implements OnInit {
   ngOnInit() {
     this.recipes = this.recipeService.getAll();
   }
+  showRecipe(recipes: Recipes) {
+    this.recipeService.setCurrent(recipes);
+    this.router.navigateByUrl('recipe-info');
+  }
 
+  async share(recipes: Recipes) {
+    await Share.share({
+      title: `Partager cette recette : ${recipes.title}`,
+      text: 'Voici une recette qui pourrais te plaire',
+      url: 'http://ionicframework.com/',
+    });
+  }
 }

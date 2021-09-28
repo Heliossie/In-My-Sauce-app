@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "in-my-sauce",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

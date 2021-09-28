@@ -21,6 +21,7 @@
         mobile</p>
     </ion-card-content>
   </ion-card>
+  <h1>Vos recettes les plus utilisés</h1>
   <ion-list *ngFor="let r of recipes">
     <ion-item>
       <ion-thumbnail slot=start>
@@ -31,7 +32,6 @@
       <ion-label>
         <h2>{{ r.title }}</h2>
       </ion-label>
-      <ion-icon slot=end name="search-sharp"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
