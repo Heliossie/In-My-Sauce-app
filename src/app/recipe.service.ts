@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 
+
+/**
+ * Interface Recipe
+ * 
+ */
 export interface Recipes {
   id: string;
   title: string;
@@ -29,6 +34,9 @@ export interface Recipes {
   difficulty: string;
 }
 
+/**
+ * Jeu de données de l'application
+ */
 const mockRecipes: Recipes[] = [
   { id: '1', title: 'Dahl de lentilles coco curry', picture: `/assets/images/dahl-lentilles.jpg`, ingrediants1: `250g de lentilles corail`, ingrediants2: `600ml d'eau`, ingrediants3: `200ml de lait de coco`, ingrediants4: `400g de légumes aux choix`, ingrediants5: `2 c. à soupe de curry`, ingrediants6: `1 c. à soupe de curcuma`, ingrediants7: `Pour l'accompagnement, prévoir du riz thaï ou basmati 60g à  80g cru par personne environ.`, ingrediants8: `Sel, poivre`, instructions1: `1.Mettez tous les ingrédients dans la cuve.`, instructions2: `2.Lancez en cuisson rapide sous pression 6 minutes.`, instructions3: `3.Préparez le riz : 2 fois le volume du riz en eau à cuire sous pression 4 minutes au cookéo.`, instructions4: `4.Dressez les assiettes en servant le dhal de lentilles avec le riz.`, instructions5: `5.Régalez-vous !!`, time: 10, difficulty: '1/5' },
   { id: '2', title: 'Porc au caramel et vermicelles de riz', picture: `/assets/images/porc-caramel.jpg`, ingrediants1: '300g de filet mignon de porc en cubes', ingrediants2: `240g de vermicelles de riz`, ingrediants3: `3 oignons émincés`, ingrediants4: `1 c. à soupe d huile d olives`, ingrediants5: `1 c. à soupe de sirop d'agave`, ingrediants6: `1 c. à soupe de sauce soja`, ingrediants7: `Quelques feuilles de coriandre et/ou de menthe`, instructions1: `1. Faites revenir les oignons 5 min avec l huile d olive dans la cuve du cookéo en mode dorer. Ajoutez la viande et poursuivez la cuisson 5 min.`, instructions2: `2. Versez 20 cl d eau. Lancez le mode cuisson sous pression pour 5 min.`, instructions3: `3. Assaisonnez, puis versez le sirop d agave et la sauce soja. Laissez caraméliser 5 min en mode dorer.`, instructions4: '4. Réhydratez les vermicelles dans de l eau bouillante, puis servez-les avec le porc caramélisé, le tout parsemé de feuilles de coriandre et / ou de menthe.', time: 20, difficulty: '2/5' },
@@ -49,13 +57,29 @@ export class RecipeService {
     this.recipes = [...mockRecipes];
   }
 
+  /**
+   * function pour voir toute les recettes
+   * 
+   * @returns recipes
+   */
   getAll() {
     return this.recipes;
   }
 
+  /**
+   * function pour modifier la recette sur lequel on clique
+   * 
+   * @param recipes 
+   */
   setCurrent(recipes: Recipes) {
     this.currentRecipe = recipes;
   }
+
+  /**
+   * function pour recupérer et afficher la recette sur lequel on clique
+   * 
+   * @returns recipe
+   */
   getCurrent() {
     return this.currentRecipe;
   }

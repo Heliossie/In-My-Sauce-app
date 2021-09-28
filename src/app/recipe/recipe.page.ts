@@ -20,11 +20,20 @@ export class RecipePage implements OnInit {
   ngOnInit() {
     this.recipes = this.recipeService.getAll();
   }
+
+  /**
+   * Function permettant de de voir les recettes
+   * @param recipes
+   */
   showRecipe(recipes: Recipes) {
     this.recipeService.setCurrent(recipes);
     this.router.navigateByUrl('recipe-info');
   }
 
+  /**
+   * fonction de partage des recettes
+   * @param recipes 
+   */
   async share(recipes: Recipes) {
     await Share.share({
       title: `Partager cette recette : ${recipes.title}`,
