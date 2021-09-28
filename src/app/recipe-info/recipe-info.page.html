@@ -3,11 +3,11 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/recipe"></ion-back-button>
     </ion-buttons>
-    <ion-title> {{ recipe?.title }}</ion-title>
-    <ion-title> Difficulté :{{ recipe?.difficulty }}</ion-title>
-    <ion-title> Temps : {{ recipe?.time }} Minutes</ion-title>
-    <ion-button (click)="startTimer()">Start Minuteur!</ion-button>
-    <ion-note>Il reste {{ counter }} secondes !</ion-note>
+    <ion-item>
+      <ion-title> {{ recipe?.title }}</ion-title>
+      <ion-title> Difficulté :{{ recipe?.difficulty }}</ion-title>
+      <ion-title> Temps : {{ recipe?.time }} Minutes</ion-title>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
@@ -15,26 +15,60 @@
   <ion-card>
     <ion-img [src]="recipe.picture"></ion-img>
     <ion-item>
-      <ion-label position='stacked'>Ingrédiants</ion-label>
-      <ion-input [value]="recipe.ingrediants1"></ion-input>
-      <ion-input [value]="recipe.ingrediants2"></ion-input>
-      <ion-input [value]="recipe.ingrediants3"></ion-input>
-      <ion-input [value]="recipe.ingrediants4"></ion-input>
-      <ion-input [value]="recipe.ingrediants5"></ion-input>
-      <ion-input [value]="recipe.ingrediants6"></ion-input>
-      <ion-input [value]="recipe.ingrediants7"></ion-input>
-      <ion-input [value]="recipe.ingrediants8"></ion-input>
-      <ion-input [value]="recipe.ingrediants9"></ion-input>
-      <ion-input [value]="recipe.ingrediants10"></ion-input>
+      <ion-text>
+        <h2>
+          <ion-label position='stacked'>Ingrédiants</ion-label>
+        </h2>
+        <p>
+          {{recipe.ingrediants1}}
+          <br>
+          {{recipe.ingrediants2}}
+          <br>
+          {{recipe.ingrediants3}}
+          <br>
+          {{recipe.ingrediants4}}
+          <br>
+          {{recipe.ingrediants5}}
+          <br>
+          {{recipe.ingrediants6}}
+          <br>
+          {{recipe.ingrediants7}}
+
+          {{recipe.ingrediants8}}
+
+          {{recipe.ingrediants9}}
+
+          {{recipe.ingrediants10}}
+        </p>
+      </ion-text>
     </ion-item>
     <ion-item>
-      <ion-label position='stacked'>Instructions</ion-label>
-      <ion-input [value]="recipe.instructions1"></ion-input>
-      <ion-input [value]="recipe.instructions2"></ion-input>
-      <ion-input [value]="recipe.instructions3"></ion-input>
-      <ion-input [value]="recipe.instructions4"></ion-input>
-      <ion-input [value]="recipe.instructions5"></ion-input>
-      <ion-input [value]="recipe.instructions6"></ion-input>
+      <ion-text>
+        <h2>
+          <ion-label position='stacked'>Instructions</ion-label>
+        </h2>
+        <p>
+          {{recipe.instructions1}}
+          <br>
+          {{recipe.instructions2}}
+          <br>
+          {{recipe.instructions3}}
+          <br>
+          {{recipe.instructions4}}
+          <br>
+          {{recipe.instructions5}}
+          <br>
+          {{recipe.instructions6}}
+          {{recipe.instructions7}}
+          {{recipe.instructions8}}
+          {{recipe.instructions9}}
+          {{recipe.instructions10}}
+        </p>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="startTimer()">Start Minuteur!</ion-button>
+      <ion-text>Il reste {{ counter }} secondes !</ion-text>
     </ion-item>
   </ion-card>
 </ion-content>

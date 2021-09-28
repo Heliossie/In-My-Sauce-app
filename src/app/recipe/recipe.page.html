@@ -10,6 +10,7 @@
 <ion-content>
   <h1>Liste de recettes</h1>
   <ion-item-sliding>
+    <!-- For pour lister les recettes -->
     <ion-list *ngFor="let r of recipes">
       <ion-item>
         <ion-thumbnail slot=start>
@@ -18,11 +19,14 @@
           </ion-avatar>
         </ion-thumbnail>
         <ion-label>
+          <!-- r.title permet de faire appel au titre del a recette -->
           <h2>{{ r.title }}</h2>
         </ion-label>
+        <!-- fonction share au click sur le bouton pour partager -->
         <ion-button slot=end (click)="share(r)">
           <ion-icon slot='icon-only' name="share-social"></ion-icon>
         </ion-button>
+        <!-- fonction d'apparation de la recette sur click sur le bouton -->
         <ion-button slot=end (click)="showRecipe(r)">
           <ion-icon slot="icon-only" name="search-sharp"></ion-icon>
         </ion-button>
